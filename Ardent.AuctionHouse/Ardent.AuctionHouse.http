@@ -1,0 +1,9 @@
+@Ardent.AuctionHouse_HostAddress = http://localhost:5129/api
+
+GET {{Ardent.AuctionHouse_HostAddress}}/Events
+Accept: application/json
+
+###
+
+GET {{Ardent.AuctionHouse_HostAddress}}/Events/123e4567-e89b-12d3-a456-426614174000
+Accept: application/json
