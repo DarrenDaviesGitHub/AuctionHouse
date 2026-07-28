@@ -10,7 +10,14 @@ public class GetEventByIdHandler(IEventsRepository eventsRepository) : IRequestH
 {
     public async Task<EventDto?> Handle(GetEventByIdQuery request, CancellationToken cancellationToken)
     {
+        using var activity = Telemetry.Telemetry.ActivitySource.StartActivity(nameof(GetEventByIdHandler));
+
+        activity?.SetTag("operation.name", nameof(GetEventByIdHandler));
+
         var result = await eventsRepository.RetrieveEventById(request.EventId, cancellationToken);
+
+        activity?.SetTag("operation.result.auctioneventexists", result is not null);
+
         return EventMapping.MapDto(result);
     }
 }
