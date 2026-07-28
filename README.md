@@ -1,5 +1,5 @@
 # AuctionHouse
-A repository demonstrating an API with Scalar documentation for an Auction House. Technical exercise.
+A repository demonstrating an API with Scalar documentation for an Auction House.
 
 <img width="1964" height="885" alt="image" src="https://github.com/user-attachments/assets/702c73f0-852d-40ff-8c26-b3e3e21b1c48" />
 
