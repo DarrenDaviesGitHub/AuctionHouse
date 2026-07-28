@@ -11,5 +11,6 @@ Jaeger showing request telemetry and trace visualisation
 
 <img width="1456" height="473" alt="image" src="https://github.com/user-attachments/assets/ac20dc39-eee1-4ff5-b531-e5dd5e06c059" />
 
-<img width="1458" height="788" alt="image" src="https://github.com/user-attachments/assets/92e30d4e-2275-4d97-bc70-e6e55ea6b054" />
+<img width="2539" height="926" alt="image" src="https://github.com/user-attachments/assets/8f886326-ca97-44e1-80c3-1529598c1468" />
+
 
