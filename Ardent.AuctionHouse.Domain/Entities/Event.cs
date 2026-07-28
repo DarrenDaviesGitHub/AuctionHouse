@@ -1,4 +1,4 @@
-﻿namespace Ardent.AuctionHouse.Domain.Models;
+﻿namespace Ardent.AuctionHouse.Domain.Entities;
 
 public class Event
 {
@@ -6,5 +6,5 @@ public class Event
     public required string Name { get; set; }
     public required DateTime Date { get; set; } 
     public required string Location { get; set; }
-    public IEnumerable<string>? Showings { get; set; }
+    public ICollection<string> Showings { get; set; } = [];
 }

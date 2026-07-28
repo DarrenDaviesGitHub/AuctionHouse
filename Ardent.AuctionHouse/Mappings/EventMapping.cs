@@ -1,4 +1,4 @@
-﻿using Ardent.AuctionHouse.Domain.Models;
+﻿using Ardent.AuctionHouse.Domain.Entities;
 using Ardent.AuctionHouse.DomainTransferObjects;
 
 namespace Ardent.AuctionHouse.Mappings;

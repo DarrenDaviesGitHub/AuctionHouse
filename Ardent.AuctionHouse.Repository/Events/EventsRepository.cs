@@ -1,14 +1,19 @@
-﻿using Ardent.AuctionHouse.Domain.Models;
-using Ardent.AuctionHouse.Repository.Data;
+﻿using Ardent.AuctionHouse.Domain.Entities;
+using Ardent.AuctionHouse.Repository.Context;
 using Ardent.AuctionHouse.Repository.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ardent.AuctionHouse.Repository.Events;
 
-public class EventsRepository : IEventsRepository
+public class EventsRepository(AuctionHouseDbContext context) : IEventsRepository
 {
-    public Task<IEnumerable<Event>> RetrieveEvents(CancellationToken cancellationToken) 
-        => EventFactory.RetrieveEvents(cancellationToken);
+    public async Task<IEnumerable<Event>> RetrieveEvents(CancellationToken cancellationToken)
+        => await context.Events
+        .AsNoTracking()
+        .ToListAsync(cancellationToken);
 
-    public Task<Event> RetrieveEventById(Guid eventId, CancellationToken cancellationToken) 
-        => EventFactory.RetrieveEventById(eventId, cancellationToken);
+    public async Task<Event?> RetrieveEventById(Guid eventId, CancellationToken cancellationToken) 
+        => await context.Events
+        .AsNoTracking()
+        .FirstOrDefaultAsync(e => e.Id == eventId, cancellationToken);
 }

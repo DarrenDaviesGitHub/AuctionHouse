@@ -1,9 +1,14 @@
 using Ardent.AuctionHouse.Middleware;
+using Ardent.AuctionHouse.Repository.Context;
 using Ardent.AuctionHouse.Repository.Events;
 using Ardent.AuctionHouse.Repository.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using Npgsql;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 using Scalar.AspNetCore;
+using Amazon;
+using Amazon.RDS.Util;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,6 +40,24 @@ builder.Services.AddOpenTelemetry()
                 options.Endpoint = new Uri(builder.Configuration["OpenTelemetry:Otlp:Endpoint"]!);
             });
     });
+
+builder.Services.AddDbContext<AuctionHouseDbContext>((services, options) =>
+{
+    var configuration = services.GetRequiredService<IConfiguration>();
+
+    var builder = new NpgsqlConnectionStringBuilder(
+        configuration.GetConnectionString("AuctionHouse"));
+
+    builder.Password = RDSAuthTokenGenerator.GenerateAuthToken(
+        hostname: builder.Host,
+        port: builder.Port,
+        dbUser: builder.Username,
+        region: RegionEndpoint.EUNorth1);
+
+    options.UseNpgsql(builder.ConnectionString);
+});
+
+builder.Services.AddScoped<IEventsRepository, EventsRepository>();
 
 builder.Services.AddOpenApi();
 
