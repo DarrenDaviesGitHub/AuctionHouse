@@ -7,7 +7,7 @@ A repository demonstrating an Auction House API with Open Telemetry and Scalar A
 
 ## Open Telemetry / Jaeger
 
-Jaeger showing request telemetry and trace visualisation
+Jaeger showing request telemetry and trace visualisation.
 
 <img width="1456" height="473" alt="image" src="https://github.com/user-attachments/assets/ac20dc39-eee1-4ff5-b531-e5dd5e06c059" />
 
