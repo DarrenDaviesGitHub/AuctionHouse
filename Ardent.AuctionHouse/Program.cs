@@ -34,6 +34,7 @@ builder.Services.AddOpenTelemetry()
                 options.RecordException = true;
             })
             .AddHttpClientInstrumentation()
+            .AddEntityFrameworkCoreInstrumentation()
             .AddSource(nameof(Ardent.AuctionHouse))
             .AddOtlpExporter(options =>
             {
