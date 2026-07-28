@@ -9,6 +9,7 @@ A repository demonstrating an API with Scalar documentation for an Auction House
 
 Jaeger showing request telemetry and trace visualisation
 
-<img width="1455" height="412" alt="image" src="https://github.com/user-attachments/assets/afc1d6fd-ac38-42da-9663-6d7d7e5b21f3" />
+<img width="1456" height="473" alt="image" src="https://github.com/user-attachments/assets/ac20dc39-eee1-4ff5-b531-e5dd5e06c059" />
 
-<img width="1469" height="779" alt="image" src="https://github.com/user-attachments/assets/febeac03-f020-41f2-9bf4-2d8287f3f1f0" />
+<img width="1458" height="788" alt="image" src="https://github.com/user-attachments/assets/92e30d4e-2275-4d97-bc70-e6e55ea6b054" />
+
