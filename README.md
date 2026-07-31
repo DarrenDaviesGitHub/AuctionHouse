@@ -1,5 +1,5 @@
 # AuctionHouse
-A repository demonstrating an API with Scalar documentation for an Auction House.
+A repository demonstrating an Auction House API connected to Amazon Aurora with Open Telemetry and Scalar API documentation.
 
 <img width="1964" height="885" alt="image" src="https://github.com/user-attachments/assets/702c73f0-852d-40ff-8c26-b3e3e21b1c48" />
 
@@ -7,7 +7,7 @@ A repository demonstrating an API with Scalar documentation for an Auction House
 
 ## Open Telemetry / Jaeger
 
-Jaeger showing request telemetry and trace visualisation
+Jaeger UI showing request telemetry and trace visualisation.
 
 <img width="1456" height="473" alt="image" src="https://github.com/user-attachments/assets/ac20dc39-eee1-4ff5-b531-e5dd5e06c059" />
 
