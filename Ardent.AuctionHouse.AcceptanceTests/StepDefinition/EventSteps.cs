@@ -1,6 +1,7 @@
 ﻿using Ardent.AuctionHouse.AcceptanceTests.Context;
 using Ardent.AuctionHouse.AcceptanceTests.Models;
 using FluentAssertions;
+using Microsoft.VisualStudio.TestPlatform.CrossPlatEngine.Adapter;
 using Reqnroll;
 using System.Net.Http.Json;
 
@@ -45,9 +46,8 @@ public sealed class EventWhenSteps
     {
         const short expectedCount = 3;
 
-        var events =
-            await _context.Response.Content
-                .ReadFromJsonAsync<List<EventDto>>();
+        var events = await _context.Response.Content
+            .ReadFromJsonAsync<List<EventDto>>();
 
         events.Should().NotBeNull();
         events.Should().NotBeEmpty();
@@ -55,16 +55,24 @@ public sealed class EventWhenSteps
     }
 
     [Then("the response should contain an event")]
-    public async Task TheResponseShouldContainOneEvent()
+    public async Task TheResponseShouldContainAnEvent()
     {
-        var result = await _context.Response.Content
-                .ReadFromJsonAsync<EventDto>();
+        _context.Event = await _context.Response.Content
+            .ReadFromJsonAsync<EventDto>();
 
-        result.Should().NotBeNull();
-        result.Name.Should().NotBeNullOrEmpty();
-        result.Location.Should().NotBeNullOrEmpty();
-        result.Showings.Should().NotBeNull();
-        result.Date.Should().BeAfter(DateTime.MinValue);
+        _context.Event.Should().NotBeNull();
+        _context.Event.Name.Should().NotBeNullOrEmpty();
+        _context.Event.Location.Should().NotBeNullOrEmpty();
+        _context.Event.Showings.Should().NotBeNull();
+        _context.Event.Date.Should().BeAfter(DateTime.MinValue);
+    }
+
+    [Then("the event should have the name (.*) and date (.*)")]
+    public async Task TheResponseShouldContainAnEventWithName(string eventName, DateTime date)
+    {
+        _context.Event.Should().NotBeNull();
+        _context.Event.Name.Should().Be(eventName);
+        _context.Event.Date.Should().Be(date);
     }
 
     [Then("the response should contain 0 events")]
