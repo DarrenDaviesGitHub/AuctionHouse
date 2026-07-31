@@ -13,4 +13,11 @@ Jaeger UI showing request telemetry and trace visualisation.
 
 <img width="2539" height="926" alt="image" src="https://github.com/user-attachments/assets/8f886326-ca97-44e1-80c3-1529598c1468" />
 
+## K6 load, smoke, stress and spike testing
 
+#### k6 run smoke.js
+<img width="857" height="738" alt="image" src="https://github.com/user-attachments/assets/ff2d75d5-2174-432d-88ac-1da7e7f8bc43" />
+
+#### k6 run spike.js
+
+<img width="830" height="578" alt="image" src="https://github.com/user-attachments/assets/d388f426-7f26-4dfa-9507-c5b6f88168ae" />
