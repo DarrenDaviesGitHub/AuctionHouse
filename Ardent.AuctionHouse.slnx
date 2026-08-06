@@ -1,6 +1,7 @@
 <Solution>
   <Project Path="Ardent.AuctionHouse.AcceptanceTests/Ardent.AuctionHouse.AcceptanceTests.csproj" />
   <Project Path="Ardent.AuctionHouse.Domain/Ardent.AuctionHouse.Domain.csproj" />
+  <Project Path="Ardent.AuctionHouse.EventSeeder/Ardent.AuctionHouse.EventSeeder.csproj" />
   <Project Path="Ardent.AuctionHouse.Repository/Ardent.AuctionHouse.Repository.csproj" />
   <Project Path="Ardent.AuctionHouse/Ardent.AuctionHouse.csproj" />
 </Solution>

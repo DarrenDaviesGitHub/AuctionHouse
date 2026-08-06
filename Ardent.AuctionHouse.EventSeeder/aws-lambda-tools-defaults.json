@@ -1,0 +1,13 @@
+{
+  "Information": [
+    "Ardent Auction House Event Seeder Lambda"
+  ],
+  "profile": "",
+  "region": "eu-north-1",
+  "configuration": "Release",
+  "function-architecture": "x86_64",
+  "function-runtime": "dotnet10",
+  "function-memory-size": 512,
+  "function-timeout": 30,
+  "function-handler": "Ardent.AuctionHouse.EventSeeder::Ardent.AuctionHouse.EventSeeder.EventSeeder::Seed"
+}
