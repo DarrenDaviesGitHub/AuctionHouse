@@ -4,6 +4,8 @@ namespace Ardent.AuctionHouse.Repository.Interfaces;
 
 public interface IEventsRepository
 {
-    Task<IEnumerable<Event>> RetrieveEvents(CancellationToken cancellationToken);
-    Task<Event?> RetrieveEventById(Guid eventId, CancellationToken cancellationToken);
+    Task Add(Event newEvent, CancellationToken cancellationToken);
+    Task AddRange(IEnumerable<Event> events, CancellationToken cancellationToken);
+    Task<IEnumerable<Event>> Get(CancellationToken cancellationToken);
+    Task<Event?> GetById(Guid eventId, CancellationToken cancellationToken);
 }

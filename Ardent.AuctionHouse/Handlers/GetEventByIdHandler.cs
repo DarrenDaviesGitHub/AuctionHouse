@@ -14,7 +14,7 @@ public class GetEventByIdHandler(IEventsRepository eventsRepository) : IRequestH
 
         activity?.SetTag("operation.name", nameof(GetEventByIdHandler));
 
-        var result = await eventsRepository.RetrieveEventById(request.EventId, cancellationToken);
+        var result = await eventsRepository.GetById(request.EventId, cancellationToken);
 
         activity?.SetTag("operation.result.auctioneventexists", result is not null);
 

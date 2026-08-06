@@ -8,7 +8,5 @@ public class AuctionHouseDbContext(DbContextOptions<AuctionHouseDbContext> optio
     public DbSet<Event> Events => Set<Event>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(AuctionHouseDbContext).Assembly);
-    }
+        => modelBuilder.ApplyConfigurationsFromAssembly(typeof(AuctionHouseDbContext).Assembly);
 }

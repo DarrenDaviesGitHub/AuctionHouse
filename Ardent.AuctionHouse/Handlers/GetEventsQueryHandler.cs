@@ -13,7 +13,7 @@ public class GetEventsQueryHandler(IEventsRepository eventsRepository) : IReques
 
         activity?.SetTag("operation.name", nameof(GetEventsQueryHandler));
 
-        var results = await eventsRepository.RetrieveEvents(cancellationToken);
+        var results = await eventsRepository.Get(cancellationToken);
 
         activity?.SetTag("operation.result.auctioneventcount", results.Count());
 
